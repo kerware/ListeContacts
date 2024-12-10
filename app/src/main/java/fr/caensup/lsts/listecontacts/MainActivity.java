@@ -6,6 +6,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -26,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
         initDatabase();
         createContacts();
+
+        tvContacts.setText( getContactsAsString() );
     }
+
+
 
     private String getContactsAsString() {
         String[] ALL = new String[]{
@@ -88,6 +93,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
+
+        // Mettre à jour le champ sur l'IHM
+
+
+
 
     private List<String> getData() {
 
